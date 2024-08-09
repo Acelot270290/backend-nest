@@ -17,7 +17,7 @@ export class AuthService {
       const { password, ...result } = user;
       return result;
     }
-    return null;
+    return null; 
   }
 
   async login(user: any) {
@@ -27,8 +27,10 @@ export class AuthService {
     };
   }
 
-  async register(username: string, email: string, pass: string) {
-    const hashedPassword = await bcrypt.hash(pass, 10);
-    return this.usersService.create(username, email, hashedPassword);
-  }
+  async register(username: string, email: string, password: string) {
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const user = await this.usersService.create(username, email, hashedPassword);
+    return user;
+}
+
 }

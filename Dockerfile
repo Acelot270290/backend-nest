@@ -6,11 +6,12 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-# Estágio de produção
+# Estágio de desenvolvimento
 FROM node:18-alpine
 WORKDIR /app
 COPY --from=build /app/dist ./dist
 COPY package*.json ./
-RUN npm install --only=production
+RUN npm install  # Instala todas as dependências, incluindo as de desenvolvimento
+COPY . .
 EXPOSE 3000
-CMD ["node", "dist/main"]
+CMD ["sh", "-c", "npx ts-node src/seed.ts && npm run start:dev"]
