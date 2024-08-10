@@ -1,73 +1,39 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# NestJS Backend
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Este é o backend do projeto Flutter Login App, desenvolvido com NestJS e configurado para rodar em contêineres Docker.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Requisitos
 
-## Description
+- Docker e Docker Compose instalados
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Como rodar o projeto
 
-## Installation
+Siga os passos abaixo para rodar o backend NestJS:
 
-```bash
-$ npm install
-```
+### 1. Clone o repositório
 
-## Running the app
+Primeiro, clone o repositório do projeto e navegue até o diretório do backend:
 
-```bash
-# development
-$ npm run start
 
-# watch mode
-$ npm run start:dev
+git clone https://github.com/seu-usuario/flutter-login-app.git
+cd flutter-login-app/backend
 
-# production mode
-$ npm run start:prod
-```
+### Configure as variáveis de ambiente
+Crie um arquivo .env na raiz do diretório backend com as seguintes variáveis de ambiente:
+APP_PORT=3000
+MONGO_URI=mongodb://mongo:27017/mydatabase
 
-## Test
+### Construa e inicie os contêineres
+Use o Docker Compose para construir as imagens e iniciar os contêineres:
+docker-compose up --build
 
-```bash
-# unit tests
-$ npm run test
+### Acesse o aplicativo
+Depois que os contêineres estiverem em execução, você pode acessar o aplicativo NestJS na URL:
+http://localhost:3000
 
-# e2e tests
-$ npm run test:e2e
+### Acesse o Mongo Express
+O Mongo Express estará disponível em:
+http://localhost:8081
 
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+user:admin
+password:pass
