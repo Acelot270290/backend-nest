@@ -1,0 +1,6 @@
+MONGO_URI=mongodb://mongo:27017/mydatabase
+APP_PORT=3000
+JWT_SECRET=9e107d9d372bb6826bd81d3542a419d6c870e38a0cbe3b573f503d17ffbb5375e3d394f41da9bbf42b1b2ebd39c57f2cdb7b2f7cc75c4b6f29e7a6c8bdfd2451
+
+
+

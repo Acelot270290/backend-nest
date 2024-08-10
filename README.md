@@ -23,6 +23,8 @@ Crie um arquivo .env na raiz do diretório backend com as seguintes variáveis d
 APP_PORT=3000
 MONGO_URI=mongodb://mongo:27017/mydatabase
 
+OBS: dexei um enxample parra vc poder colocar o jwt
+
 ### Construa e inicie os contêineres
 Use o Docker Compose para construir as imagens e iniciar os contêineres:
 docker-compose up --build
